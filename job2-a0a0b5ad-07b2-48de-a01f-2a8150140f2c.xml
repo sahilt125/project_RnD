@@ -1,0 +1,34 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>a0a0b5ad-07b2-48de-a01f-2a8150140f2c</id>
+    <loglevel>INFO</loglevel>
+    <name>job2</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <description>global step 1</description>
+        <exec>echo values : ${data.varOne} ${option.optionVar} data value- ${stub.key5}</exec>
+      </command>
+      <command>
+        <description>halt</description>
+        <step-plugin type='flow-control'>
+          <configuration>
+            <entry key='fail' value='false' />
+            <entry key='halt' value='true' />
+            <entry key='status' value='halt result' />
+          </configuration>
+        </step-plugin>
+      </command>
+      <command>
+        <description>test</description>
+        <exec>java -version</exec>
+      </command>
+    </sequence>
+    <uuid>a0a0b5ad-07b2-48de-a01f-2a8150140f2c</uuid>
+  </job>
+</joblist>
