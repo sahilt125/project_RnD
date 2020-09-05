@@ -1,0 +1,70 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <dispatch>
+      <excludePrecedence>true</excludePrecedence>
+      <keepgoing>false</keepgoing>
+      <rankOrder>ascending</rankOrder>
+      <successOnEmptyNodeFilter>false</successOnEmptyNodeFilter>
+      <threadcount>1</threadcount>
+    </dispatch>
+    <executionEnabled>true</executionEnabled>
+    <id>34f927eb-f5b8-43f6-a445-2b441b81e14a</id>
+    <loglevel>INFO</loglevel>
+    <name>job1</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <nodefilters>
+      <filter>name: 132155-T490</filter>
+    </nodefilters>
+    <nodesSelectedByDefault>true</nodesSelectedByDefault>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <description>Data Step</description>
+        <step-plugin type='stub-data-step'>
+          <configuration>
+            <entry key='data' value='key1=value1&#10;key2=value2&#10;key3=value3' />
+            <entry key='format' value='properties' />
+          </configuration>
+        </step-plugin>
+      </command>
+      <command>
+        <exec>java -version</exec>
+      </command>
+      <command>
+        <description>Data Node Step</description>
+        <node-step-plugin type='stub-node-step'>
+          <configuration>
+            <entry key='data' value='key5=value5' />
+            <entry key='format' value='properties' />
+          </configuration>
+        </node-step-plugin>
+      </command>
+      <command>
+        <description>data step label</description>
+        <exec>echo hiiii - ${stub.key1}  ${stub.key5}</exec>
+      </command>
+      <command>
+        <description>Global Variable</description>
+        <step-plugin type='export-var'>
+          <configuration>
+            <entry key='export' value='varOne' />
+            <entry key='group' value='export' />
+            <entry key='value' value='hello' />
+          </configuration>
+        </step-plugin>
+      </command>
+      <command>
+        <description>job2</description>
+        <jobref name='job2' nodeStep='true'>
+          <arg line='-optionVar sahil' />
+          <useName>true</useName>
+          <uuid>a0a0b5ad-07b2-48de-a01f-2a8150140f2c</uuid>
+        </jobref>
+      </command>
+    </sequence>
+    <uuid>34f927eb-f5b8-43f6-a445-2b441b81e14a</uuid>
+  </job>
+</joblist>
