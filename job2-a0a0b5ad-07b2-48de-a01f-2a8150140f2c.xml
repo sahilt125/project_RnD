@@ -25,7 +25,7 @@
         </step-plugin>
       </command>
       <command>
-        <description>test</description>
+        <description>test2</description>
         <exec>java -version</exec>
       </command>
     </sequence>
