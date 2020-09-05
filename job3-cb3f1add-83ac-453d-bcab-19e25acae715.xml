@@ -1,0 +1,27 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>cb3f1add-83ac-453d-bcab-19e25acae715</id>
+    <loglevel>INFO</loglevel>
+    <name>job3</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <retry>1</retry>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='sequential'>
+      <command>
+        <description>server start</description>
+        <errorhandler>
+          <script><![CDATA[echo issue fixed]]></script>
+          <scriptargs />
+        </errorhandler>
+        <script><![CDATA[PING 10.115.105.108
+exit 1;]]></script>
+        <scriptargs />
+      </command>
+    </sequence>
+    <uuid>cb3f1add-83ac-453d-bcab-19e25acae715</uuid>
+  </job>
+</joblist>
