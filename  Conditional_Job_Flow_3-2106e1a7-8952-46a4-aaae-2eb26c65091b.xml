@@ -1,0 +1,27 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>2106e1a7-8952-46a4-aaae-2eb26c65091b</id>
+    <loglevel>INFO</loglevel>
+    <name> Conditional_Job_Flow_3</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <script><![CDATA[@echo off 
+SET /A a = 5 
+SET /A b = 10 
+SET /A c = %a% + %b% 
+
+if %c%==15 curl -X POST "http://10.113.26.209:4440/api/21/job/42f3e7b9-565b-4b8a-8a26-656f03efca85/run" --header "Accept: application/json" --header "X-Rundeck-Auth-Token: 1WDf8EuL5PPexfMxeUPVDCh5JUGjTCXT"
+
+if %c%==10 echo "The value of variable c is 10"]]></script>
+        <scriptargs />
+      </command>
+    </sequence>
+    <uuid>2106e1a7-8952-46a4-aaae-2eb26c65091b</uuid>
+  </job>
+</joblist>
