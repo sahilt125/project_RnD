@@ -1,0 +1,27 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>cc5ce27c-32b3-46c1-bb85-63c1971b6d8c</id>
+    <loglevel>INFO</loglevel>
+    <name>Conditional_Job_Flow_1</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <script><![CDATA[echo hii]]></script>
+        <scriptargs />
+      </command>
+      <command>
+        <jobref name='Conditional_Dependent_Job' nodeStep='true'>
+          <arg line='-param1 value1' />
+          <useName>true</useName>
+          <uuid>42f3e7b9-565b-4b8a-8a26-656f03efca85</uuid>
+        </jobref>
+      </command>
+    </sequence>
+    <uuid>cc5ce27c-32b3-46c1-bb85-63c1971b6d8c</uuid>
+  </job>
+</joblist>
