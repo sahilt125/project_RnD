@@ -1,0 +1,23 @@
+<joblist>
+  <job>
+    <defaultTab>nodes</defaultTab>
+    <description></description>
+    <executionEnabled>true</executionEnabled>
+    <id>42f3e7b9-565b-4b8a-8a26-656f03efca85</id>
+    <loglevel>INFO</loglevel>
+    <name>Conditional_Dependent_Job</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <plugins />
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <exec>echo hiii ${option.param1}</exec>
+      </command>
+      <command>
+        <description>Global data </description>
+        <exec>echo hii ${export.globalVar}</exec>
+      </command>
+    </sequence>
+    <uuid>42f3e7b9-565b-4b8a-8a26-656f03efca85</uuid>
+  </job>
+</joblist>
